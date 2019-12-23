@@ -1,0 +1,30 @@
+public class StringReversalAlgo{ 
+ public static void main(String[] args){
+  String str = "I AM A JAVA GEEK";   
+  System.out.println(str);
+  System.out.print(reverseWord(str));
+ }
+
+ public static String reverseWord(String str){
+    int start=0, end = str.length();
+    String result = "";
+    for(int i=str.length() - 1; i>=0; i--){
+        
+        if(str.charAt(i) == ' ') {
+            start = i+1;
+            while(start != end)
+             result += str.charAt(start++);
+            
+            result += " ";
+            end = i;
+        }
+    }    
+    
+    start = 0; 
+    while(start != end) {
+        result += str.charAt(start++); 
+    } 
+    return result; 
+ }
+
+}
