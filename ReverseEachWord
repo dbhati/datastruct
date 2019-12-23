@@ -1,0 +1,34 @@
+package com.datastruct.strings;
+
+public class ReverseEachWord {
+
+	public static void main(String[] args) {
+		ReverseEachWord obj = new ReverseEachWord();
+		obj.reverseWordInString("I am a JAVA Geek");
+	}
+	
+	public void reverseWordInString(String str) {
+		
+		String reverseStr = "";
+		/* The split() method of String class splits
+		 * a string in several strings based on the
+		 * delimiter passed as an argument to it
+		 */
+		String[] words = str.split(" ");
+	    
+		for(int i=0; i< words.length; i++ ) {
+			String word = words[i];
+			String reverseWord = "";
+			
+			for(int j=word.length()-1; j>=0 ; j--) {
+				reverseWord += word.charAt(j);
+			}
+			
+			reverseStr += reverseWord +" ";
+		}
+		
+		System.out.println(str);
+		System.out.println(reverseStr);
+	}
+
+}
